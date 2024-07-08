@@ -27,14 +27,7 @@ const Header = (props: Props) => {
         className="flex flex-row items-center"
       >
         {/* Social icons */}
-        <SocialIcon
-          url={props.data.github}
-          fgColor="currentColor"
-          bgColor="transparent"
-          className=" hover:scale-110 text-[gray] hover:text-[#F7AB0A]/70 transition ease-in-out duration-100"
-          target="_blank"
-          rel="noreferrer"
-        />
+     
         <SocialIcon
           url={props.data.linkedin}
           fgColor="currentColor"
@@ -43,23 +36,7 @@ const Header = (props: Props) => {
           target="_blank"
           rel="noreferrer"
         />
-        <SocialIcon
-          url={props.data.whatsapp}
-          network="whatsapp"
-          fgColor="currentColor"
-          bgColor="transparent"
-          className=" hover:scale-110 text-[gray] hover:text-[#F7AB0A]/70 transition ease-in-out duration-100"
-          target="_blank"
-          rel="noreferrer"
-        />
-        {/* <SocialIcon
-          url={props.data.instagram}
-          fgColor="currentColor"
-          bgColor="transparent"
-          className=" hover:scale-110 text-[gray] hover:text-[#F7AB0A]/70 transition ease-in-out duration-100"
-          target="_blank"
-          rel="noreferrer"
-        /> */}
+       
       </motion.div>
 
       <motion.div
@@ -85,11 +62,7 @@ const Header = (props: Props) => {
             {mailIcon}
           </div>
         </a>
-        <a href={props.data.resume} target="_blank" rel="noreferrer">
-          <div className="w-[1.68rem] fill-[#808080] scale-75 hover:scale-[85%] hover:fill-[#F7AB0A]/70 transition ease-in-out duration-200">
-            {resumeIcon}
-          </div>
-        </a>
+        
       </motion.div>
     </header>
   );

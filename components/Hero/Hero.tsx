@@ -4,7 +4,7 @@ import BackgroundCircles from "./BackgroundCircles";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import mugshot from "../../assets/mugshot.png";
+
 
 type Props = {
   data: any;
@@ -12,14 +12,8 @@ type Props = {
 
 const Hero = (props: Props) => {
   const [text] = useTypewriter({
-    // words: [
-    //   "Hey this is Sunil!",
-    //   "fullStackDeveloper.tsx",
-    //   "Hobbyist-Photographer.jpeg",
-    //   "<ChaiLover/> ",
-    // ],
+   
     words: props.data.typewriter,
-    // words: heroData.typewriter,
     loop: true,
     delaySpeed: 2000,
     typeSpeed: 100,
@@ -67,18 +61,16 @@ const Hero = (props: Props) => {
             <Link href="#about">
               <button className="heroButton">About</button>
             </Link>
-            <Link href="#certifications">
-              <button className="heroButton">certifications</button>
+            <Link href="#benefits">
+              <button className="heroButton">Benefits</button>
             </Link>
-            <Link href="#skills">
-              <button className="heroButton">Skills</button>
+            <Link href="#membership">
+              <button className="heroButton">Membership</button>
             </Link>
-            <Link href="#projects">
-              <button className="heroButton">Projects</button>
+            <Link href="#contact">
+              <button className="heroButton">Contact</button>
             </Link>
-            <Link href="https://sunilresume.vercel.app/" target="_blank">
-              <button className="heroButton">Resume</button>
-            </Link>
+          
           </div>
         </div>
       </motion.div>

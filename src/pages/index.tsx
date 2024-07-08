@@ -3,22 +3,19 @@ import { Inter } from "@next/font/google";
 import Header from "components/Header/Header";
 import Hero from "components/Hero/Hero";
 import About from "components/About/About";
-// import Skills from "components/OldSkills/Skills";
-import Projects from "components/Projects/Projects";
 import ContactMe from "components/Contact/ContactMe";
-import Certifications from "components/Certifications/Certifications";
-import axios from "axios";
+
 import React from "react";
-import SkillsSection from "components/SkillsSection/SkillsSection";
-import Carousel from "components/Carousel/Carousel";
+import  siteData  from '../../data/siteData'
 import { useState, useEffect } from "react";
-import ProjectsMobile from "components/ProjectsMobile/ProjectsMobile";
-// import { InfinitySpin } from "react-loader-spinner";
+import Benefits from "components/Benefits/Benefits";
+import Membership from "components/Membership/Membership";
+
 
 const inter = Inter({ subsets: ["latin"] });
 export async function getStaticProps() {
-  // Get external data from the file system, API, DB, etc.
-  let { data }: any = await axios.get("https://sunilportfolioapi.vercel.app/");
+  
+  let data  = siteData
   // The value of the `props` key will be
   //  passed to the `Home` component
   return {
@@ -32,6 +29,7 @@ type Props = {
 };
 
 export default function Home(props: Props) {
+  console.log('props', props)
   const [width, setWidth] = useState(0);
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -42,65 +40,43 @@ export default function Home(props: Props) {
     
     text-white h-screen snap-y snap-mandatory overflow-x-hidden overflow-y-scroll z-0 sm:scrollbar-thin sm:scrollbar-thumb-[#F7AB0A]/80 sm:scrollbar-transparent sm:scrollbar-thumb-rounded-full sm:scrollbar-track-rounded-full">
       <Head>
-        <title>{`Sunil Band`}</title>
+        <title>{`Societas Arcana`}</title>
       </Head>
       {/* Header */}
       <Header data={props.data[5]} />
-
-      {/* <section id="text">
-  <Test/>
-</section> */}
-
       {/* Hero */}
       <section id="hero" className="snap-start">
         <Hero data={props.data[1]} />
       </section>
-
-      {/* About */}
       <section id="about" className="snap-center snap-mandatory  snap-always">
         <About data={props.data[0]} />
       </section>
 
-      {/* Certifications */}
+      {/* Benefits */}
       <section
-        id="certifications"
+        id="benefits"
         className="snap-start snap-mandatory snap-always"
       >
-        <Certifications data={props.data[2]} />
+      
+        <Benefits />
       </section>
 
-      {/* Skills */}
-      {/* <section
-      id="skills"
+      {/* Membership */}
+      <section
+      id="membership"
       className="snap-start snap-mandatory  snap-always"
     >
-      <Skills data={props.data[3]} />
-    </section> */}
+     <Membership />
+      {/* <Skills data={props.data[3]} /> */}
+    </section>
 
-      {/* Skills new section */}
-      <section id="skills" className="snap-start snap-mandatory  snap-always">
-        <SkillsSection data={props.data[3]} />
-      </section>
+     
 
-      {/* Projects old*/}
-      {/* <section id="projects" className="snap-start snap-mandatory  snap-always">
-        <Projects data={props.data[4]} />
-      </section> */}
-
-      {/* Projects new */}
-      <section id="projects" className="snap-start snap-mandatory  snap-always max-h-screen overflow-clip">
-        {width > 768 ? (
-          <Carousel data={props.data[4]} />
-        ) : (
-          <ProjectsMobile data={props.data[4]}/>
-        )}
-        
-      </section>
-
-      {/* Contact Me */}
+      {/* Contact */}
       <section id="contact" className="snap-start snap-mandatory  snap-always">
         <ContactMe />
       </section>
+      
     </div>
   );
 }

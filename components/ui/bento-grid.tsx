@@ -43,7 +43,7 @@ export const BentoGridItem = ({
       )}
     >
       <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-dot-white/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent border-white/[0.2] bg-neutral-100">
-        <Image width={800} height={600} src={header} alt={title} />
+        
    </div>
       
       <div className="group-hover/bento:translate-x-2 transition duration-200">
